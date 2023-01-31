@@ -22,6 +22,5 @@ namespace SalesModel {
         property DeliveryMan^ DeliveryMan;
         property Customer^ Customer;
 
-        void ShowReport();
     };
 }
