@@ -12,7 +12,8 @@ namespace SalesModel {
         property int Id;
         property String^ Name;
         property String^ Description;
-        property double Price;
+        property double PriceMin;
+        property double PriceMaj;
         property int Stock;
         property char Status;
         property array<Byte>^ Photo;

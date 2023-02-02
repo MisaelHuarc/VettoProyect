@@ -12,7 +12,9 @@ namespace SalesModel {
     public:
         property String^ Goals;
 
+        /*
         void AddProduct();
-        void Operation1();       
+        void Operation1();    
+        */
     };
 }

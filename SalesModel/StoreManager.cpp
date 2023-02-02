@@ -2,18 +2,10 @@
  * Project Untitled
  */
 
-
+#include "pch.h"
 #include "StoreManager.h"
 
 /**
  * StoreManager implementation
  */
 
-
-void StoreManager::AddProduct() {
-
-}
-
-void StoreManager::Operation1() {
-
-}
