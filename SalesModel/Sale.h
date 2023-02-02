@@ -1,11 +1,10 @@
 /**
- * Project Untitled
+ * Clase Sale modela a una transacción de venta
  */
-
-
 #pragma once
-#include "DeliveryMan.h"
+#include "Salesman.h"
 #include "Customer.h"
+
 using namespace System;
 
 namespace SalesModel {
@@ -15,13 +14,7 @@ namespace SalesModel {
         property String^ TxnDate;
         property char Status;
         property double Total;
-        property String^ Addrees;
-        property char PaidMode;
-        property String^ SaleDate;
-        //La asociación se convierte en un atributo
-        property DeliveryMan^ DeliveryMan;
+        property Salesman^ Salesman;
         property Customer^ Customer;
-
-        void ShowReport();
     };
 }

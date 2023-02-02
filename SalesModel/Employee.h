@@ -1,17 +1,19 @@
 /**
- * Clase EMPLOYEE que modela a un empleado asimismo employee hereda de persona
+ * Clase Employee que modela a un empleado.
  */
-
 #pragma once
 
 #include "Person.h"
 
-using namespace System;
-namespace SalesModel {
+namespace  SalesModel {
     public ref class Employee : public Person {
     public:
+        property String^ LastName;
         property double Salary;
         property String^ Store;
-        property char Status;
+        property String^ Username;
+        property String^ Password;
+        property char Gender;
+        property String^ Birthday;
     };
 }

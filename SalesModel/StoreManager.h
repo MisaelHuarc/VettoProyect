@@ -1,18 +1,16 @@
 /**
- * Clase que modela Al que administra las ventas
+ * Project Untitled
  */
-
-
 #pragma once
+
 #include "Employee.h"
 
-using namespace System;
+
+using  namespace System;
+
 namespace SalesModel {
     public ref class StoreManager : public Employee {
     public:
         property String^ Goals;
-
-        void AddProduct();
-        void Operation1();       
     };
 }

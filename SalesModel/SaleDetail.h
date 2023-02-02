@@ -1,12 +1,12 @@
 /**
- * Clase (Detalle de venta) que modela los detalles de la venta
+ * Clase SaleDetail que modela a un detalle de una transacción de venta.
  */
-
-
 #pragma once
+
 #include "Product.h"
 
 using namespace System;
+
 namespace SalesModel {
     public ref class SaleDetail {
     public:
@@ -15,7 +15,6 @@ namespace SalesModel {
         property double SubTotal;
         property double UnitPrice;
         property Product^ Product;
-
     };
 
 }

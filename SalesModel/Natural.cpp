@@ -3,8 +3,9 @@
  */
 #include "pch.h"
 
-#include "SaleDetail.h"
+#include "Natural.h"
 
 /**
- * SaleDetail implementation
+ * Natural implementation
  */
+

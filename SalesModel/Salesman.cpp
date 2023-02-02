@@ -3,8 +3,8 @@
  */
 #include "pch.h"
 
-#include "SaleDetail.h"
+#include "Salesman.h"
 
 /**
- * SaleDetail implementation
+ * Salesman implementation
  */
