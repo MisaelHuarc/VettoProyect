@@ -24,4 +24,6 @@ namespace SalesController {
 		static List<Product^>^ QueryProductsByNameOrCareer(String^ nameCaree);
 
 	};
+
+	//SEGUNDA prueba
 }
