@@ -8,6 +8,7 @@
 
 using namespace System;
 namespace SalesModel {
+    [Serializable]
     public ref class Employee : public Person {
     public:
         property double Salary;

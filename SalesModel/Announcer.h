@@ -10,6 +10,7 @@
 using namespace System;
 
 namespace SalesModel {
+    [Serializable]
     public ref class Announcer : public Person {
     public:
         property String^ Department;
