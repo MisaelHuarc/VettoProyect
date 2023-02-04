@@ -8,6 +8,9 @@ namespace SalesView {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+	using namespace SalesController;
+	using namespace SalesModel;
+	using namespace System::Collections::Generic;
 
 	/// <summary>
 	/// Resumen de CustomerForm
@@ -343,9 +346,9 @@ namespace SalesView {
 				this->customerId,
 					this->fisrtName, this->lastName, this->email, this->phoneNumber
 			});
-			this->dgvCustomer->Location = System::Drawing::Point(36, 291);
+			this->dgvCustomer->Location = System::Drawing::Point(36, 312);
 			this->dgvCustomer->Name = L"dgvCustomer";
-			this->dgvCustomer->Size = System::Drawing::Size(454, 150);
+			this->dgvCustomer->Size = System::Drawing::Size(454, 205);
 			this->dgvCustomer->TabIndex = 8;
 			// 
 			// customerId
@@ -406,7 +409,7 @@ namespace SalesView {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(534, 529);
+			this->ClientSize = System::Drawing::Size(534, 539);
 			this->Controls->Add(this->UpdateCustomer);
 			this->Controls->Add(this->DeleteCustomer);
 			this->Controls->Add(this->AddCustomer);

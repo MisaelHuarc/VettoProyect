@@ -16,6 +16,7 @@ namespace SalesController {
 		static array<String^>^ carrerArr = { " mecatronica ", " civil ", " industrial ", " informatica ", " arquitectura ", " electronica ", " fisica "}; // Arreglo de carreras como cadenas de texto.
 		static List<String^>^ careerList = gcnew List<String^>(carrerArr);  // lista de todas las carreras con las que trabaja el sistema
 		
+		static List<Customer^>^ customerList = gcnew List<Customer^>();
 
 	public:
 		//Métodos CRUD de Product (C:Create, R:Request, U:Update, D:Delete)
@@ -30,5 +31,13 @@ namespace SalesController {
 		//Métodos CRUD de carreras (C:Create, R:Request, U:Update, D:Delete)
 		
 		static List<String^>^ QueryAllCareers();
+
+
+		//Métodos CRUD de Customer (C:Create, R:Request, Update, D:Delete)
+		static int AddCustomer(Customer^ customer);
+		static Customer^ QueryCustomerById(int customerId);
+		static List<Customer^>^ QueryAllCustomers();
+		static int UpdateCustomer(Customer^ customer);
+		static int DeleteCustomer(int customerId);
 	};
 }

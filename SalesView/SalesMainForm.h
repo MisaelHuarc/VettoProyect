@@ -1,6 +1,9 @@
 #pragma once
 
 #include "ProductForm.h"
+#include "CustomerForm.h"
+
+
 
 namespace SalesView {
 
@@ -73,11 +76,11 @@ namespace SalesView {
 			this->productoToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->clientesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->vendedoresToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->anunciantesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->operacionesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->realizarUnaVentaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->reportesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ayudaToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->anunciantesToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -90,7 +93,8 @@ namespace SalesView {
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(881, 28);
+			this->menuStrip1->Padding = System::Windows::Forms::Padding(4, 2, 0, 2);
+			this->menuStrip1->Size = System::Drawing::Size(661, 24);
 			this->menuStrip1->TabIndex = 3;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -98,13 +102,13 @@ namespace SalesView {
 			// 
 			this->archivoToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->salirToolStripMenuItem });
 			this->archivoToolStripMenuItem->Name = L"archivoToolStripMenuItem";
-			this->archivoToolStripMenuItem->Size = System::Drawing::Size(73, 24);
+			this->archivoToolStripMenuItem->Size = System::Drawing::Size(60, 20);
 			this->archivoToolStripMenuItem->Text = L"Archivo";
 			// 
 			// salirToolStripMenuItem
 			// 
 			this->salirToolStripMenuItem->Name = L"salirToolStripMenuItem";
-			this->salirToolStripMenuItem->Size = System::Drawing::Size(121, 26);
+			this->salirToolStripMenuItem->Size = System::Drawing::Size(96, 22);
 			this->salirToolStripMenuItem->Text = L"Salir";
 			this->salirToolStripMenuItem->Click += gcnew System::EventHandler(this, &SalesMainForm::salirToolStripMenuItem_Click);
 			// 
@@ -115,67 +119,69 @@ namespace SalesView {
 					this->clientesToolStripMenuItem, this->vendedoresToolStripMenuItem, this->anunciantesToolStripMenuItem
 			});
 			this->mantenimientoToolStripMenuItem->Name = L"mantenimientoToolStripMenuItem";
-			this->mantenimientoToolStripMenuItem->Size = System::Drawing::Size(124, 24);
+			this->mantenimientoToolStripMenuItem->Size = System::Drawing::Size(101, 20);
 			this->mantenimientoToolStripMenuItem->Text = L"Mantenimiento";
 			// 
 			// productoToolStripMenuItem
 			// 
 			this->productoToolStripMenuItem->Name = L"productoToolStripMenuItem";
-			this->productoToolStripMenuItem->Size = System::Drawing::Size(224, 26);
+			this->productoToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->productoToolStripMenuItem->Text = L"Producto";
 			this->productoToolStripMenuItem->Click += gcnew System::EventHandler(this, &SalesMainForm::productoToolStripMenuItem_Click);
 			// 
 			// clientesToolStripMenuItem
 			// 
 			this->clientesToolStripMenuItem->Name = L"clientesToolStripMenuItem";
-			this->clientesToolStripMenuItem->Size = System::Drawing::Size(224, 26);
+			this->clientesToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->clientesToolStripMenuItem->Text = L"Clientes";
+			this->clientesToolStripMenuItem->Click += gcnew System::EventHandler(this, &SalesMainForm::clientesToolStripMenuItem_Click);
 			// 
 			// vendedoresToolStripMenuItem
 			// 
 			this->vendedoresToolStripMenuItem->Name = L"vendedoresToolStripMenuItem";
-			this->vendedoresToolStripMenuItem->Size = System::Drawing::Size(224, 26);
+			this->vendedoresToolStripMenuItem->Size = System::Drawing::Size(180, 22);
 			this->vendedoresToolStripMenuItem->Text = L"Vendedores";
+			// 
+			// anunciantesToolStripMenuItem
+			// 
+			this->anunciantesToolStripMenuItem->Name = L"anunciantesToolStripMenuItem";
+			this->anunciantesToolStripMenuItem->Size = System::Drawing::Size(180, 22);
+			this->anunciantesToolStripMenuItem->Text = L"Anunciantes";
 			// 
 			// operacionesToolStripMenuItem
 			// 
 			this->operacionesToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->realizarUnaVentaToolStripMenuItem });
 			this->operacionesToolStripMenuItem->Name = L"operacionesToolStripMenuItem";
-			this->operacionesToolStripMenuItem->Size = System::Drawing::Size(106, 24);
+			this->operacionesToolStripMenuItem->Size = System::Drawing::Size(85, 20);
 			this->operacionesToolStripMenuItem->Text = L"Operaciones";
 			// 
 			// realizarUnaVentaToolStripMenuItem
 			// 
 			this->realizarUnaVentaToolStripMenuItem->Name = L"realizarUnaVentaToolStripMenuItem";
-			this->realizarUnaVentaToolStripMenuItem->Size = System::Drawing::Size(213, 26);
+			this->realizarUnaVentaToolStripMenuItem->Size = System::Drawing::Size(169, 22);
 			this->realizarUnaVentaToolStripMenuItem->Text = L"Realizar una venta";
 			// 
 			// reportesToolStripMenuItem
 			// 
 			this->reportesToolStripMenuItem->Name = L"reportesToolStripMenuItem";
-			this->reportesToolStripMenuItem->Size = System::Drawing::Size(82, 24);
+			this->reportesToolStripMenuItem->Size = System::Drawing::Size(65, 20);
 			this->reportesToolStripMenuItem->Text = L"Reportes";
 			// 
 			// ayudaToolStripMenuItem
 			// 
 			this->ayudaToolStripMenuItem->Name = L"ayudaToolStripMenuItem";
-			this->ayudaToolStripMenuItem->Size = System::Drawing::Size(65, 24);
+			this->ayudaToolStripMenuItem->Size = System::Drawing::Size(53, 20);
 			this->ayudaToolStripMenuItem->Text = L"Ayuda";
-			// 
-			// anunciantesToolStripMenuItem
-			// 
-			this->anunciantesToolStripMenuItem->Name = L"anunciantesToolStripMenuItem";
-			this->anunciantesToolStripMenuItem->Size = System::Drawing::Size(224, 26);
-			this->anunciantesToolStripMenuItem->Text = L"Anunciantes";
 			// 
 			// SalesMainForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(881, 443);
+			this->ClientSize = System::Drawing::Size(661, 360);
 			this->Controls->Add(this->menuStrip1);
 			this->IsMdiContainer = true;
 			this->MainMenuStrip = this->menuStrip1;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"SalesMainForm";
 			this->Text = L"Aplicativo de ventas";
 			this->menuStrip1->ResumeLayout(false);
@@ -195,6 +201,11 @@ private: System::Void productoToolStripMenuItem_Click(System::Object^ sender, Sy
 	ProductForm^ productForm = gcnew ProductForm();
 	productForm->MdiParent = this;
 	productForm->Show();
+}
+private: System::Void clientesToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+	CustomerForm^ customerForm = gcnew CustomerForm();
+	customerForm->MdiParent = this;
+	customerForm->Show();
 }
 };
 }

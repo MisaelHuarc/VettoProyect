@@ -77,3 +77,45 @@ List<String^>^ SalesController::Controller::QueryAllCareers()
     //careerList = (List<String^>^)Persistance::LoadXMLData("career.xml");
     return careerList;
 }
+
+int SalesController::Controller::AddCustomer(Customer^ customer)
+{
+    //ver que no se repita el id d eproduct ingresante
+    customerList->Add(customer);
+    Persistance::PersistBinary("customers.bin", customerList);
+    return Int32(customer->Id);
+}
+
+Customer^ SalesController::Controller::QueryCustomerById(int customerId)
+{
+    throw gcnew System::NotImplementedException();
+    // TODO: Insertar una instrucción "return" aquí
+}
+
+List<Customer^>^ SalesController::Controller::QueryAllCustomers()
+{
+    throw gcnew System::NotImplementedException();
+    // TODO: Insertar una instrucción "return" aquí
+}
+
+int SalesController::Controller::UpdateCustomer(Customer^ customer)
+{
+    for (int i = 0; i < customerList->Count; i++)
+        if (customerList[i]->Id == customer->Id) {
+            customerList[i] = customer;
+            Persistance::PersistBinary("customers.bin", customerList);
+            return customer->Id;
+        }
+
+    return 0;
+}
+
+int SalesController::Controller::DeleteCustomer(int customerId)
+{
+    for (int i = 0; i < customerList->Count; i++)
+        if (customerList[i]->Id == customerId) {
+            customerList->RemoveAt(i);
+            Persistance::PersistBinary("customers.bin", customerList);
+            return customerId;
+        }
+}
