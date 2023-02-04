@@ -8,6 +8,7 @@
 
 using namespace System;
 namespace SalesModel {
+    [Serializable]
     public ref class SaleDetail {
     public:
         property int Id;

@@ -8,10 +8,11 @@
 
 using namespace System;
 namespace SalesModel {
+    [Serializable]
     public ref class Employee : public Person {
     public:
         property double Salary;
-        property String^ Store;
+        property String^ Store; //CREO QUE PUEDE SALIR
         property char Status;
     };
 }

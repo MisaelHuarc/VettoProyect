@@ -2,9 +2,11 @@
  * En esta clase se define la clase PERSONA
  */
 #pragma once
+
 using namespace System;
 
 namespace SalesModel {
+    [Serializable]
     public ref class Person {
     public:
         property int Id;
