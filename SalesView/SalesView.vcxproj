@@ -131,6 +131,12 @@
     <ClInclude Include="CustomerForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="LoginForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="NewCustomerForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="SalesMainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -143,6 +149,8 @@
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="CustomerForm.cpp" />
+    <ClCompile Include="LoginForm.cpp" />
+    <ClCompile Include="NewCustomerForm.cpp" />
     <ClCompile Include="SalesMainForm.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -174,6 +182,12 @@
   <ItemGroup>
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCustomerForm.resx">
+      <DependentUpon>NewCustomerForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesMainForm.resx">
       <DependentUpon>SalesMainForm.h</DependentUpon>
