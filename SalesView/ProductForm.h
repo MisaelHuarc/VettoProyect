@@ -1,4 +1,5 @@
 #pragma once
+#include "CareerListForm.h"
 
 namespace SalesView {
 
@@ -43,7 +44,7 @@ namespace SalesView {
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::Label^ label6;
+
 	private: System::Windows::Forms::TextBox^ txtProductId;
 	private: System::Windows::Forms::TextBox^ txtName;
 	private: System::Windows::Forms::TextBox^ txtDescription;
@@ -68,12 +69,19 @@ namespace SalesView {
 	private: System::Windows::Forms::TextBox^ txtPriceMaj;
 
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::ComboBox^ cmbCareer1;
-	private: System::Windows::Forms::ComboBox^ cmbCareer2;
-	private: System::Windows::Forms::ComboBox^ cmbCareer3;
-	private: System::Windows::Forms::ComboBox^ cmbCareer4;
-	private: System::Windows::Forms::ComboBox^ cmbCareer5;
-	private: System::Windows::Forms::RadioButton^ rbComunConfirmation;
+
+
+
+
+
+
+
+
+
+
+
+
+	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
@@ -111,7 +119,6 @@ namespace SalesView {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->txtProductId = (gcnew System::Windows::Forms::TextBox());
 			this->txtName = (gcnew System::Windows::Forms::TextBox());
 			this->txtDescription = (gcnew System::Windows::Forms::TextBox());
@@ -125,12 +132,7 @@ namespace SalesView {
 			this->dgvProducts = (gcnew System::Windows::Forms::DataGridView());
 			this->txtPriceMaj = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->cmbCareer1 = (gcnew System::Windows::Forms::ComboBox());
-			this->cmbCareer2 = (gcnew System::Windows::Forms::ComboBox());
-			this->cmbCareer3 = (gcnew System::Windows::Forms::ComboBox());
-			this->cmbCareer4 = (gcnew System::Windows::Forms::ComboBox());
-			this->cmbCareer5 = (gcnew System::Windows::Forms::ComboBox());
-			this->rbComunConfirmation = (gcnew System::Windows::Forms::RadioButton());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -174,9 +176,10 @@ namespace SalesView {
 			this->label4->AutoSize = true;
 			this->label4->Location = System::Drawing::Point(33, 187);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(78, 16);
+			this->label4->Size = System::Drawing::Size(128, 16);
 			this->label4->TabIndex = 3;
-			this->label4->Text = L"Precio (min)";
+			this->label4->Text = L"Precio minorista (s/.)";
+			this->label4->Click += gcnew System::EventHandler(this, &ProductForm::label4_Click);
 			// 
 			// label5
 			// 
@@ -186,15 +189,6 @@ namespace SalesView {
 			this->label5->Size = System::Drawing::Size(44, 16);
 			this->label5->TabIndex = 4;
 			this->label5->Text = L"Stock:";
-			// 
-			// label6
-			// 
-			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(33, 287);
-			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(130, 16);
-			this->label6->TabIndex = 5;
-			this->label6->Text = L"Carrera relacionada:";
 			// 
 			// txtProductId
 			// 
@@ -234,9 +228,9 @@ namespace SalesView {
 			// 
 			// btnAdd
 			// 
-			this->btnAdd->Location = System::Drawing::Point(36, 365);
+			this->btnAdd->Location = System::Drawing::Point(53, 345);
 			this->btnAdd->Name = L"btnAdd";
-			this->btnAdd->Size = System::Drawing::Size(92, 30);
+			this->btnAdd->Size = System::Drawing::Size(117, 39);
 			this->btnAdd->TabIndex = 12;
 			this->btnAdd->Text = L"Agregar";
 			this->btnAdd->UseVisualStyleBackColor = true;
@@ -244,9 +238,9 @@ namespace SalesView {
 			// 
 			// btnUpdate
 			// 
-			this->btnUpdate->Location = System::Drawing::Point(246, 364);
+			this->btnUpdate->Location = System::Drawing::Point(233, 345);
 			this->btnUpdate->Name = L"btnUpdate";
-			this->btnUpdate->Size = System::Drawing::Size(93, 31);
+			this->btnUpdate->Size = System::Drawing::Size(108, 40);
 			this->btnUpdate->TabIndex = 13;
 			this->btnUpdate->Text = L"Modificar";
 			this->btnUpdate->UseVisualStyleBackColor = true;
@@ -254,9 +248,9 @@ namespace SalesView {
 			// 
 			// btnDelete
 			// 
-			this->btnDelete->Location = System::Drawing::Point(412, 364);
+			this->btnDelete->Location = System::Drawing::Point(406, 345);
 			this->btnDelete->Name = L"btnDelete";
-			this->btnDelete->Size = System::Drawing::Size(86, 31);
+			this->btnDelete->Size = System::Drawing::Size(107, 40);
 			this->btnDelete->TabIndex = 14;
 			this->btnDelete->Text = L"Eliminar";
 			this->btnDelete->UseVisualStyleBackColor = true;
@@ -265,7 +259,7 @@ namespace SalesView {
 			// pbPhoto
 			// 
 			this->pbPhoto->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->pbPhoto->Location = System::Drawing::Point(641, 12);
+			this->pbPhoto->Location = System::Drawing::Point(586, 12);
 			this->pbPhoto->Name = L"pbPhoto";
 			this->pbPhoto->Size = System::Drawing::Size(290, 282);
 			this->pbPhoto->TabIndex = 15;
@@ -273,9 +267,9 @@ namespace SalesView {
 			// 
 			// btnSetImage
 			// 
-			this->btnSetImage->Location = System::Drawing::Point(477, 18);
+			this->btnSetImage->Location = System::Drawing::Point(612, 328);
 			this->btnSetImage->Name = L"btnSetImage";
-			this->btnSetImage->Size = System::Drawing::Size(147, 33);
+			this->btnSetImage->Size = System::Drawing::Size(242, 33);
 			this->btnSetImage->TabIndex = 16;
 			this->btnSetImage->Text = L"Agregar imagen";
 			this->btnSetImage->UseVisualStyleBackColor = true;
@@ -288,11 +282,12 @@ namespace SalesView {
 				this->Column1,
 					this->Column2, this->Column3, this->Column4, this->Column5, this->Column6
 			});
-			this->dgvProducts->Location = System::Drawing::Point(12, 437);
+			this->dgvProducts->Location = System::Drawing::Point(36, 425);
 			this->dgvProducts->Name = L"dgvProducts";
 			this->dgvProducts->RowHeadersWidth = 51;
 			this->dgvProducts->RowTemplate->Height = 24;
-			this->dgvProducts->Size = System::Drawing::Size(993, 150);
+			this->dgvProducts->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->dgvProducts->Size = System::Drawing::Size(993, 287);
 			this->dgvProducts->TabIndex = 17;
 			this->dgvProducts->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ProductForm::dgvProducts_CellClick);
 			this->dgvProducts->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &ProductForm::dataGridView1_CellContentClick);
@@ -309,80 +304,19 @@ namespace SalesView {
 			this->label7->AutoSize = true;
 			this->label7->Location = System::Drawing::Point(33, 219);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(83, 16);
+			this->label7->Size = System::Drawing::Size(133, 16);
 			this->label7->TabIndex = 18;
-			this->label7->Text = L"Precio (may)";
+			this->label7->Text = L"Precio mayorista (s/.)";
 			// 
-			// cmbCareer1
+			// button1
 			// 
-			this->cmbCareer1->FormattingEnabled = true;
-			this->cmbCareer1->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"mecatronica", L"civil", L"electronica", L"industrial",
-					L"informatica"
-			});
-			this->cmbCareer1->Location = System::Drawing::Point(182, 308);
-			this->cmbCareer1->Name = L"cmbCareer1";
-			this->cmbCareer1->Size = System::Drawing::Size(121, 24);
-			this->cmbCareer1->TabIndex = 21;
-			// 
-			// cmbCareer2
-			// 
-			this->cmbCareer2->FormattingEnabled = true;
-			this->cmbCareer2->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"mecatronica", L"civil", L"electronica", L"industrial",
-					L"informatica"
-			});
-			this->cmbCareer2->Location = System::Drawing::Point(332, 308);
-			this->cmbCareer2->Name = L"cmbCareer2";
-			this->cmbCareer2->Size = System::Drawing::Size(121, 24);
-			this->cmbCareer2->TabIndex = 22;
-			// 
-			// cmbCareer3
-			// 
-			this->cmbCareer3->FormattingEnabled = true;
-			this->cmbCareer3->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"mecatronica", L"civil", L"electronica", L"industrial",
-					L"informatica"
-			});
-			this->cmbCareer3->Location = System::Drawing::Point(477, 308);
-			this->cmbCareer3->Name = L"cmbCareer3";
-			this->cmbCareer3->Size = System::Drawing::Size(121, 24);
-			this->cmbCareer3->TabIndex = 23;
-			// 
-			// cmbCareer4
-			// 
-			this->cmbCareer4->FormattingEnabled = true;
-			this->cmbCareer4->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"mecatronica", L"civil", L"electronica", L"industrial",
-					L"informatica"
-			});
-			this->cmbCareer4->Location = System::Drawing::Point(623, 308);
-			this->cmbCareer4->Name = L"cmbCareer4";
-			this->cmbCareer4->Size = System::Drawing::Size(121, 24);
-			this->cmbCareer4->TabIndex = 24;
-			// 
-			// cmbCareer5
-			// 
-			this->cmbCareer5->FormattingEnabled = true;
-			this->cmbCareer5->Items->AddRange(gcnew cli::array< System::Object^  >(5) {
-				L"mecatronica", L"civil", L"electronica", L"industrial",
-					L"informatica"
-			});
-			this->cmbCareer5->Location = System::Drawing::Point(765, 308);
-			this->cmbCareer5->Name = L"cmbCareer5";
-			this->cmbCareer5->Size = System::Drawing::Size(121, 24);
-			this->cmbCareer5->TabIndex = 25;
-			// 
-			// rbComunConfirmation
-			// 
-			this->rbComunConfirmation->AutoSize = true;
-			this->rbComunConfirmation->Location = System::Drawing::Point(201, 282);
-			this->rbComunConfirmation->Name = L"rbComunConfirmation";
-			this->rbComunConfirmation->Size = System::Drawing::Size(147, 20);
-			this->rbComunConfirmation->TabIndex = 26;
-			this->rbComunConfirmation->TabStop = true;
-			this->rbComunConfirmation->Text = L"En muchas carreras";
-			this->rbComunConfirmation->UseVisualStyleBackColor = true;
+			this->button1->Location = System::Drawing::Point(344, 210);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(123, 58);
+			this->button1->TabIndex = 20;
+			this->button1->Text = L"Elegir carreras vinculadas";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &ProductForm::button1_Click);
 			// 
 			// Column1
 			// 
@@ -400,14 +334,14 @@ namespace SalesView {
 			// 
 			// Column3
 			// 
-			this->Column3->HeaderText = L"Precio Unit(min.)";
+			this->Column3->HeaderText = L"Precio minorista (s/.)";
 			this->Column3->MinimumWidth = 6;
 			this->Column3->Name = L"Column3";
 			this->Column3->Width = 75;
 			// 
 			// Column4
 			// 
-			this->Column4->HeaderText = L"Precio Unit(may.)";
+			this->Column4->HeaderText = L"Precio mayorista (s/.)";
 			this->Column4->MinimumWidth = 6;
 			this->Column4->Name = L"Column4";
 			this->Column4->Width = 75;
@@ -430,13 +364,9 @@ namespace SalesView {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1022, 609);
-			this->Controls->Add(this->rbComunConfirmation);
-			this->Controls->Add(this->cmbCareer5);
-			this->Controls->Add(this->cmbCareer4);
-			this->Controls->Add(this->cmbCareer3);
-			this->Controls->Add(this->cmbCareer2);
-			this->Controls->Add(this->cmbCareer1);
+			this->AutoScroll = true;
+			this->ClientSize = System::Drawing::Size(1067, 609);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->txtPriceMaj);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->dgvProducts);
@@ -450,14 +380,13 @@ namespace SalesView {
 			this->Controls->Add(this->txtDescription);
 			this->Controls->Add(this->txtName);
 			this->Controls->Add(this->txtProductId);
-			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Name = L"ProductForm";
-			this->Text = L"ProductForm";
+			this->Text = L"Mantenimiento de productos";
 			this->Load += gcnew System::EventHandler(this, &ProductForm::ProductForm_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pbPhoto))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dgvProducts))->EndInit();
@@ -662,6 +591,13 @@ private: System::Void dgvProducts_CellClick(System::Object^ sender, System::Wind
 		pbPhoto->Image = nullptr;
 		pbPhoto->Invalidate();
 	}
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	CareerListForm^ CareerListForm = gcnew CareerListForm();
+	CareerListForm->MdiParent = this;
+	CareerListForm->Show();
+}
+private: System::Void label4_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }
